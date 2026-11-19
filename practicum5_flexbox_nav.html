@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioNest - Flexbox Navigation</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Arial, sans-serif; background:#eef2ea; }
+  .navbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; background:#1f3d2a; padding:0 20px; }
+  .brand { color:#fff; font-size:22px; font-weight:bold; padding:14px 0; text-decoration:none; }
+  .brand span { color:#7fb069; }
+  .menu { display:flex; flex-wrap:wrap; align-items:center; list-style:none; margin:0; padding:0; gap:4px; }
+  .menu a { display:block; color:#fff; text-decoration:none; padding:16px 14px; }
+  .menu > li:hover > a { background:#2e5a3c; }
+  .dropdown { position:relative; }
+  .dropdown-menu { display:none; position:absolute; top:100%; left:0; min-width:180px; background:#1f3d2a; list-style:none; margin:0; padding:0; z-index:10; }
+  .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display:block; }
+  .dropdown-menu a:hover { background:#2e5a3c; }
+  .btn-quote { background:#7fb069; color:#1f3d2a !important; font-weight:bold; border-radius:4px; padding:8px 14px !important; }
+  .btn-signin { border:1px solid #7fb069; border-radius:4px; padding:8px 14px !important; }
+  .content { padding:30px 20px; max-width:700px; margin:auto; }
+  @media (max-width: 700px) {
+    .navbar { flex-direction:column; align-items:stretch; padding:0 10px; }
+    .brand { text-align:center; }
+    .menu { flex-direction:column; align-items:stretch; }
+    .dropdown-menu { position:static; }
+    .menu a { padding:12px 14px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="#">Bio<span>Nest</span></a>
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li class="dropdown">
+      <a href="#" aria-haspopup="true">Products &#9662;</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Compostable Mailers</a></li>
+        <li><a href="#">Molded Fibre Trays</a></li>
+        <li><a href="#">Food Boxes</a></li>
+        <li><a href="#">Biodegradable Films</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" aria-haspopup="true">Industries &#9662;</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">E-commerce</a></li>
+        <li><a href="#">Food &amp; Beverage</a></li>
+        <li><a href="#">Retail</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+    <li><a class="btn-quote" href="#">Get a Quote</a></li>
+    <li><a class="btn-signin" href="#">Sign In</a></li>
+  </ul>
+</nav>
+<div class="content">
+  <h1>Biodegradable packaging solutions</h1>
+  <p>Resize the window below 700px to see the menu switch from a row to a column.</p>
+</div>
+</body>
+</html>
